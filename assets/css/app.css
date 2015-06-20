@@ -1,0 +1,247 @@
+/* VET */
+body {font-family:'Open Sans', sans-serif;font-size:16px;line-height:16px;color:#333333;background-color:transparent;}
+.navbar-header{height: 80px;line-height: 80px;}
+
+.nav-yellow {background-color:#FFFFFF;border-color:#FFFFFF;border-radius:0px}
+.nav-yellow .download {padding:25px 20px 0px 0px;font-size:18px;color:#1a171b;}
+.lead{font-weight: 200;font-size:18px;}
+
+#btnPedir,#btnCancelar,#btnSubir, #btnTiposVehiculo {padding-left: 6px;padding-right: 6px;margin-bottom: 4px; }
+#btnCancelar,#btnSubir {display: none; }
+.btn-green {background-color:#72ed65;border-color: #72ed65;color: #FFFFFF;border-radius: 0}
+.btn-green:hover,.btn-green:active ,.btn-green:focus {background-color:#66ed57;border-color: #72ed65;color: #FFFFFF;border-radius: 0}
+.btn-red {background-color:#fc3048;border-color: #fc3048;color: #FFFFFF;border-radius: 0}
+.btn-red:hover, .btn-red:active , .btn-red:focus {background-color:#fb243e;border-color: #fb243e;color: #FFFFFF;border-radius: 0}
+.btn-blue {background-color:#65cfed;border-color: #65cfed;color: #FFFFFF;border-radius: 0}
+.btn-blue:hover, .btn-blue:active , .btn-blue:focus {background-color:#56cbec;border-color: #56cbec;color: #FFFFFF;border-radius: 0}
+ 
+.form-control:focus {border-color: #e9e766;}
+.form-signin {
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin-heading, .form-signin .checkbox {color: white;}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.navbar-violet{
+  background-color: #2c1530;
+  border-color: #2c1530;
+  border-radius: 0;
+}
+
+#user_marker {
+  z-index:100;
+  position:absolute;
+  top:60%;
+  left:50%;
+  margin-left:-5px;
+  margin-top:-38px;
+  pointer-events:none
+}
+
+.text-centered {text-align:center}
+
+.favorites {font-size:2em;position:relative;right:20px;z-index:1;top:20px;border:0;background:transparent;}
+
+.yellow{
+  color: #f3c600;
+}
+.yellow_back{
+ background-color: #f3c600; 
+}
+.white{
+  color: #FFF;
+}
+.violet{
+  color: #2c1530;
+}
+
+#map-canvas,#map-canvas-new-booking,#map-wrapper {width:100%;height:auto;position:absolute;top:50px;bottom:0}
+
+.icon-bar{
+  background-color: #2c1530;
+}
+
+.navbar-inverse .navbar-toggle{
+ background-color: #2c1530; 
+}
+
+
+.nav-yellow li a {color:#2c1530}
+.nav-yellow li a:hover {color:#f3c600;background-color:transparent}
+.nav-yellow [class^="icon-"] {font-size:3em}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+
+.ajax-loader{display: none;}
+
+
+#ajax-loader2 {background-color:rgba(1,1,1,0.7);padding:5px;position:fixed;left:50%;top:50%;z-index:2000;margin-left:-30px;margin-top:-30px;border-radius:5px;display:none}
+
+
+
+
+.progress-bar{
+  background-color: #f3c600;
+}
+
+
+.navbar-toggle{
+  padding-top: 28px;
+}
+.navbar-nav{
+  padding-top: 15px;
+}
+
+
+.pac-container{
+  z-index: 99999;
+}
+
+li{padding-bottom: 5px;line-height: 17px;}
+
+/* VET */ 
+.logo {max-height:75px;margin-left:30px}
+
+
+
+
+
+
+
+
+.signup-signin {/*background:rgba(0,0,0,0.5);*/height:100%;max-width:400px;width:100%;padding:0px 30px;text-align:center;position:relative;bottom:0;/*right:50px;*//*padding-top:140px;*/margin:0 auto;}
+.signup-signin p {color:#fff}
+.signup-signin a {color:#fff;text-decoration:underline}
+.submit {position:absolute;bottom:0;margin:0 auto;z-index:100;width:100%;text-align:center;padding:20px}
+#number {padding:5px}
+.btn-default {background:#eeeeee}
+#btn-pickmeuphere-special {background-image:url("opciones.gif");background-repeat:no-repeat;background-size:22px;background-position:center;padding-left:20px;padding-right:20px;border-radius:0px}
+.booking-index {margin-top:20px;padding:25px 0px 25px 25px;border-right:2px solid #fff;border-bottom:1px solid #d3d3d3}
+.booking-index span {display:block}
+.rute {font-size:5em;text-align:center;color:#b7b7b7}
+.bookings-status {z-index:100;background:#c9c9c9;position:absolute;height:100%;bottom:0;padding:155px 10px 10px 10px;overflow:scroll}
+.promo-code-message {display:none;text-align:center;width:100%;font-weight:normal;padding-top:0}
+.edit_booking {text-align:center;margin-top:55px}
+#driver_cost.form-control {margin-left:auto;margin-right:auto;width:30%;text-align:center}
+#booking_passenger_cost {margin-left:auto;margin-right:auto;width:40%;text-align:center}
+label.form-group {margin:0;color:#555555}
+.disagree {display:none;text-align:center}
+.disagree .label-form-group {width:50%;display:block;margin:0 auto 10px auto}
+.service-cost {background-color:#eee;width:60%;margin:0 auto 12px;height:100px}
+.service-cost .label-form-group {padding-top:15px;margin-bottom:5px}
+.box-booking {margin:10px 0px}
+.box-booking .title {background:#fff;padding:10px;border-radius:5px 5px 0px 0px;color:#a8a8a8}
+.box-booking .title .loading {width:25px;margin-right:10px}
+.box-booking .icon-susses {margin-right:20px;font-size:1.4em;color:#41a237}
+.box-booking .icon-cancel {margin-right:20px;font-size:1.4em;color:#da000e}
+.box-booking .body-booking {background:#e0e0e0;padding:10px}
+.box-booking .footer-booking {color:#fff;padding:10px;background:#414141}
+.data-driver {-webkit-padding-start:10px;margin-left:0px;color:#979797;list-style-type:none}
+.container {height:100%}
+.signin-wrapper {float:none;margin:auto}
+.field_with_errors input {border-color:red}
+.field_with_errors label {color:#b40000}
+
+
+
+#map-canvas-new-booking,#map-wrapper {top:0px}
+#map-canvas {z-index:0}
+.navbar {margin-bottom:0px}
+
+#btn-pickmeuphere-special {right:0;background-image:url(/assets/webapp/opciones-755e835a7a21327f010bd2c1633bd598.gif);background-repeat:no-repeat;background-size:22px;background-position:center}
+#show-booking .waiting-view {text-align:center;margin:auto;float:none}
+#show-booking .arraival-data {background-color:#1287cc;color:white;padding:5px 20px;text-align:center}
+#show-booking .arraival-data img {margin-right:10px}
+#show-booking .driver-info {background-color:#f0f0f0;padding:10px}
+#show-booking .driver-info #driver-photo {height:78px;float:left}
+#show-booking .driver-info .driver-details {margin-left:10px;color:#666666}
+#show-booking .driver-info .driver-details span {display:block;white-space:nowrap}
+#main-container {position:absolute;top:52px;left:0;right:0;bottom:0;height:auto;padding:0}
+#booking-booked-buttons {z-index:1000;position:absolute;bottom:2px;right:0px;width:100%;margin:0}
+#booking-booked-buttons a {float:right;background-color:#e6e6e6;height:50px;padding:0}
+#booking-booked-buttons a span {position:absolute;bottom:0;color:#4d4d4d;white-space:nowrap;width:100%;text-align:center;font-size:11px}
+#booking-booked-buttons a:last-child {border-radius:5px 0 0 5px;background-image:url(/assets/webapp/cancel-icon-a7836253511a719534faf263df18684e.gif);background-repeat:no-repeat;background-position-x:center;background-size:34px;background-position-y:2px}
+.navbar {z-index:1000}
+.test-red {background:red}
+#modal input {padding:5px}
+.btn-menu-back {margin-top:20px;padding:2px;border:solid 2px #fff;font-size:1em;color:white}
+.btn-menu {background:#F8F8F8;border:0px;color:#333;height:60px;padding:13px 6px;width:47px}
+.btn-menu.book {border-radius:0px 10px 10px 0px;font-size:2em;z-index:10;position:absolute;top:201px}
+
+@media (min-width: 768px) {
+        .imgConductor { width:250px; }
+        .imgCoche { width:250px; }
+}
+
+@media (max-width: 767px) {
+        .signup-signin {right:0px}
+        .mobile {position:absolute;top:70px;right:20px;left:20px}
+        .mass {margin:0 auto;width:50%;padding:0px}
+        .bookings-status {padding-top:125px;background:rgba(198,198,198,0.8)}
+        .icon-rute {font-size:1.2em}
+        .icon_menu li {padding:3px}
+        .icon_menu li [class^="icon-"] {font-size:2.5em}
+        .imgConductor { width:130px; }
+        .imgCoche { width:130px; }
+}
+@media (max-width: 450px) {
+        #small-nav-bar ul li {padding:0px;width:23%}
+        #small-nav-bar ul li a {padding:0px}
+        .imgConductor { width:60px; }
+        .imgCoche { width:60px; }
+}
+
+
+.suggest-element{
+                margin-left:5px;
+                margin-top:5px;
+                width:350px;
+                cursor:pointer;
+                }
+#suggestions {
+                width:350px;
+                height:150px;
+                overflow: auto;
+                }
