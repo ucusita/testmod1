@@ -23,7 +23,7 @@ class Taxi
 //////////////////////////////////////////////////////////////////////////////////////////
 	public function Update_Taxi_Status($placa, $Estado)
 	{
-			// Borra el estado anterior
+			// Borra el estado anterior 
 			$cadena="UPDATE unidades SET estado_taxi='-' WHERE placa = '$placa'";
 			$query_Update = $this->_db->prepare($cadena);
 			$query_Update->execute();

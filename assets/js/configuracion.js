@@ -9,6 +9,7 @@
 
 var paisM='AR';
 var urllocal='http://192.168.1.9/CityTaxiWeb/';
+//var urllocal = "";
 var urlimagenes='http://192.168.1.9/CityTaxiEnterprise/files/';
 var pais='ar';
 var centromapa_latitud=-29.4182207;
