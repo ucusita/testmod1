@@ -14,41 +14,18 @@
 	*				{"lat":"value", "lng":"value", "status":"value"},
 	*				]
 	*/
-	
-	
-	/*Sample*/
-	$historial = array(
-		array(
-			"lat" =>"-29.4182207",
-			"lng" => "-66.8590197",
-			"status"=>"Libre"),
-		array(
-			"lat" =>"-29.4182207",
-			"lng" =>"-66.8691196",
-			"status"=>"Libre"),
-		array(
-			"lat" =>"-29.4182207",
-			"lng" =>"-66.8792195",
-			"status"=>"Libre"),
-		array(
-			"lat" =>"-29.4182207",
-			"lng" =>"-66.8893194",
-			"status"=>"Libre"),
-		array(
-			"lat" =>"-29.4182207",
-			"lng" =>"-66.8994193",
-			"status"=>"Libre"),
-		array(
-			"lat" =>"-29.4282207",
-			"lng" =>"-66.8994193",
-			"status"=>"Libre"),
-		array(
-			"lat" =>"-29.4282207",
-			"lng" =>"-66.8893194",
-			"status"=>"Libre"),
-	);
-	
-	echo json_encode($historial);
-	
-	
+
+	if (isset($_POST['placa']))
+	{		
+		require_once(dirname(__FILE__)).'/assets/core/init.php';			
+
+		$placa = $_POST['placa'];
+
+		$Servicio = new Taxi();
+
+		$historial=$Servicio->HistoriaGPSUnidad($placa);
+		
+		echo json_encode($historial);
+		//print_r($historial);
+	}
 ?>

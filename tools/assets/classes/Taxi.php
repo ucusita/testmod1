@@ -48,14 +48,20 @@ class Taxi
 //////////   ACTUALIZA EL PAGO DEL SERVICIO Y CIERRA CON LOS DEMAS DATOS
 //////////////////////////////////////////////////////////////////////////////////////////
 		
-	public function Update_Taxi_Location($placa, $lattaxi, $longtaxi)
+	public function Update_Taxi_Location($placa, $lattaxi, $longtaxi, $estado, $servicio)
 	{
-				$cadena="UPDATE unidades SET lattaxi='$lattaxi', longtaxi='$longtaxi' WHERE placa = '$placa'";
-				//generaLogs("Update_Taxi_Location:". $cadena);
-				
+				$cadena="UPDATE unidades SET lattaxi='$lattaxi', longtaxi='$longtaxi' WHERE placa = '$placa'";								
 				$query_Update = $this->_db->prepare($cadena);
 				$query_Update->execute();
 				
+				$fecha=date('Y-m-d');
+				$hora=date('G:i:s');
+				$cadena="INSERT INTO `taxivoy`.`localizacion_estado` 
+				(`idlocalizacion_estado`, `placa`, `latitud`, `longitud`, `estado`, `servicio`, `fecha`, `hora`) 
+				VALUES ('', '$placa', '$lattaxi', '$longtaxi', '$estado', '$servicio', '$fecha', '$hora')";
+				$query_Update = $this->_db->prepare($cadena);
+				$query_Update->execute();
+
 				if($query_Update->rowCount() == 1){				
 					return 1;  // Actualizo correctamente					
 				}else{
@@ -64,6 +70,22 @@ class Taxi
 			
 	 } // end function Update_User;
 
+//////////////////////////////////////////////////////////////////////////////////////////
+//////////   DEVUELVE EL HISTORIAL DE LA UUNIDAD
+//////////////////////////////////////////////////////////////////////////////////////////
 		
-} // End of my Users Class
+	public function HistoriaGPSUnidad($placa)
+	{
+				$cadena="SELECT * FROM localizacion_estado WHERE placa = '$placa'";				
+				
+				$query = $this->_db->prepare($cadena);
+				$query->execute();
+				$historial= $query->fetchAll(PDO::FETCH_ASSOC);
+
+				return $historial; 
+			
+	 } // end function HistoriaGPSUnidad;
+
+		
+} 
 

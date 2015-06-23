@@ -6,6 +6,9 @@
 		$placa = $_POST['placa'];
 		$lattaxi = $_POST['lattaxi'];
 		$longtaxi = $_POST['longtaxi'];
+		//$estado = $_POST['estado'];
+		//$nroservicio = $_POST['servicio'];
+
 		$Servicio = new Taxi();
 
 		$Localizacion=$Servicio->Update_Taxi_Location($placa,$lattaxi,$longtaxi);
