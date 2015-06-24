@@ -18,6 +18,12 @@ var icontaxi;
 
 $(document).ready(function() {	
 
+var  _FechaInicial = moment();
+var  _FechaFinal = moment().subtract(29, 'days');
+
+var _HoraInicial = moment().format("00:00:00","HH:MM:ss");
+var _HoraFinal = moment().format("23:59:59","HH:MM:ss");
+
 //////////////////////////////////////////////////////////////////////////////////////
 //Selector de fechas
 	var regional = 
@@ -35,11 +41,15 @@ $(document).ready(function() {
 	$('input[name="rangoFechas"]').daterangepicker(
 			{
 				locale : regional,
-			    format: 'DD-MM-YYYY',
+			    format: 'DD-MM-YYYY HH:MM:ss',
+				timePicker: true,
 			    //startDate: '2013-01-01',
 			    //endDate: '2015-12-31',
 			    startDate: moment().subtract(29, 'days').format('DD-MM-YYYY'),		//Un mes atrás
 			    endDate: moment().subtract(0, 'days').format('DD-MM-YYYY'),			//Hoy
+			   	timePickerIncrement: 5,
+		        timePicker12Hour: false,
+		        timePickerSeconds: false,
 			    ranges: {
 			       'Hoy': [moment(), moment()],
 			       'Ayer': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
@@ -50,9 +60,11 @@ $(document).ready(function() {
 			    }
 			}, 
 			function(start, end, label) {
-			   var  _FechaInicial=start.format('YYYY-MM-DD');	//Formato para Mysql
-			   var  _FechaFinal=end.format('YYYY-MM-DD');
-			    $('input[name="rangoFechas"]').val(start.format('DD-MM-YYYY') + ' - ' + end.format('DD-MM-YYYY'));
+			    _FechaInicial=start.format('YYYY-MM-DD');	//Formato para Mysql
+			    _FechaFinal=end.format('YYYY-MM-DD');
+				_HoraInicial=start.format('HH:MM:ss');
+				_HoraFinal=end.format('HH:MM:ss');
+			    $('input[name="rangoFechas"]').val(start.format('DD-MM-YYYY') +' '+ _HoraInicial + ' - ' + end.format('DD-MM-YYYY') +' '+ _HoraFinal);
 				$.ajax({
 					url: "./tools/consult-historic.php", /*this is a php that connect with the mysql server and extract the historic data*/
 					type: "POST",
@@ -60,6 +72,8 @@ $(document).ready(function() {
 					data:{
 							FechaInicial: _FechaInicial,
 							FechaFinal: _FechaFinal,
+							HoraInicial: _HoraInicial,
+							HoraFinal: _HoraFinal,
 						},
 				}).done(function(data){
 					historial = data;
@@ -71,8 +85,9 @@ $(document).ready(function() {
 					}
 				});
 			});
+			
 
-	$('input[name="rangoFechas"]').val(moment().subtract(29, 'days').format('DD-MM-YYYY') + ' - ' + moment().format('DD-MM-YYYY'));
+	$('input[name="rangoFechas"]').val(moment().subtract(29, 'days').format('DD-MM-YYYY') +' '+ _HoraInicial +' - ' + moment().format('DD-MM-YYYY')+ ' '+_HoraFinal);
 	
 	
  });
