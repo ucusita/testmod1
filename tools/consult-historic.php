@@ -14,7 +14,7 @@
 	*				{"lat":"value", "lng":"value", "status":"value"},
 	*				]
 	*/
-
+	
 	if (isset($_POST['placa']))
 	{		
 		require_once(dirname(__FILE__)).'/assets/core/init.php';			
@@ -28,4 +28,32 @@
 		echo json_encode($historial);
 		//print_r($historial);
 	}
+	
+	/* TESTING EMMA- NO ELIMINAR
+	$historial = array(
+		array(
+			"lat"=>"-29.4182207",
+			"lng"=>"-66.8590197",
+			"status"=>"Libre",
+		),
+		array(
+			"lat"=>"-29.4182207",
+			"lng"=>"-66.8790195",
+			"status"=>"Libre",
+		),
+		array(
+			"lat"=>"-29.4182207",
+			"lng"=>"-66.8893194",
+			"status"=>"Libre",
+		),
+		array(
+			"lat"=>"-29.4182207",
+			"lng"=>"-66.8994193",
+			"status"=>"Libre",
+		),
+	);
+	
+	echo json_encode($historial);
+	
+	*/
 ?>

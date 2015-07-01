@@ -76,20 +76,51 @@ var _HoraFinal = moment().format("23:59:59","HH:MM:ss");
 							HoraFinal: _HoraFinal,
 						},
 				}).done(function(data){
+					console.log(data);
 					historial = data;
-					if(historial.length != 0){
+					/*if(historial.length != 0){
 						drawMarker();	
 					}else{
 						alert("No existe historial para el taxi");
 						removeMarkers();
-					}
+					}*/
 				});
 			});
 			
 
 	$('input[name="rangoFechas"]').val(moment().subtract(29, 'days').format('DD-MM-YYYY') +' '+ _HoraInicial +' - ' + moment().format('DD-MM-YYYY')+ ' '+_HoraFinal);
 	
+	/*Boton Inicar Recorrido*/
+	var intervalTime;
 	
+	$('#IniciarVerRecorrido').click(function(){
+		removeMarkers() //remove old markers 
+		var lat; //latitude
+		var lng; //longitude
+		var state; //state taxi  in this position
+		var i = 0;
+		console.log(historial.length);
+		intervalTime = setInterval(function(){
+			lat = historial[i]['lat'];
+			lng = historial[i]['lng'];
+			status = historial[i]['status'];
+			
+			marker = new google.maps.Marker();
+			marker.setPosition(new google.maps.LatLng(lat, lng)); // put lat & lng
+			marker.setIcon(icontaxi[status]); // put the status icon
+			marker.setAnimation(google.maps.Animation.DROP);
+			marker.setMap(map); //put marker in the map
+			markers.push(marker);
+			i++;
+			if(i >= historial.length){
+				clearInterval(intervalTime);
+			}		
+		},1000); 
+	});
+	
+	$('#PararRecorrido').click(function(){
+		clearInterval(intervalTime);
+	});
  });
 
 /*added by Emmanuel*/
@@ -150,6 +181,10 @@ function removeMarkers(){
 		markers[i].setMap(null);
 	}
 	markers = [];
+	
+}
+
+function IniciaVerRecorrid(){
 	
 }
 window.onload = loadScript;
